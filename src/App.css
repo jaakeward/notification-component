@@ -1,58 +1,64 @@
 .notification-wrapper {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    width: 300px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 350px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-gutter: stable both-edges;
+  height: 95%;
+  background-color: #f1f5f6;
 }
 
 .notification-item {
-    box-shadow: 0 0 10px rgba(0,0,0, 0.3);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    animation: SlideLeft 0.4s;
-    animation-fill-mode: forwards;
-    width: 300px;
-}
-
-@keyframes SlideLeft {
-    0% {
-        margin-left: 120%;
-    }
-
-    100% {
-        margin-left: 0;
-    }
-}
-
-@keyframes SlideRight {
-    0% {
-        margin-left: 0;
-    }
-
-    100% {
-        margin-left: 120%;
-    }
-}
-
-.notification-item.exit {
-    animation: SlideRight 0.4s;
-    animation-fill-mode: forwards;
+  padding: 5px;
+  float: right;
+  box-shadow: 0 0 5px rbg(0,0,0,0.4);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+  animation: SlideLeft 0.4s;
+  animation-fill-mode: forwards;
+  width: 300px;
+  background-color: rgb(227, 218, 218);
 }
 
 .notification-item p {
-    margin: 0;
-    padding: 10px;
+  margin: 0;
+  padding: 5px 0;
 }
 
-.notification-item .bar {
-    height: 10px;
+.notification-item .bar{
+  height: 10px;
+  background-color: coral;
 }
 
-.notification-item.success .bar {
-    background-color: #65d266;
+.notification-item.high .bar{
+  background-color: blue;
 }
 
-.notification-item.error .bar {
-    background-color: red;
+.notification-item.low .bar{
+  background-color: red;
+}
+
+@keyframes SlideLeft {
+  0% {
+    margin-left: 120%;
+  }
+  100% {
+    margin-left: 0;
+  } 
+}
+@keyframes SlideRight {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 120%;
+  }
+}
+
+.notification-item .exit {
+  animation: SlideRight 0.4s;
+  animation-fill-mode: forwards;
 }
