@@ -31,8 +31,13 @@ const Notification = (props) => {
     return (
         <div 
             className={`notification-item ${props.type}${exit ? " exit" : ""}`}
-            onMouseLeave={() => {setID();}}
-            onMouseEnter={() => {clearInterval(intervalID);}}>
+            onMouseEnter={() => {if (!(intervalID)){setID(); console.log("starting" + intervalID);}}}
+            onClick={() => {setTimeout(() => {
+                console.log("clearing " + intervalID);
+                clearInterval(intervalID);
+                setIntervalID(null);
+                setWidth(0);
+            }, 10)}}>
             <p>${props.message}</p>
             <div className="bar" style={{width: `${width}%`}} />
         </div>
