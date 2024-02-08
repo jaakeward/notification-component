@@ -31,9 +31,8 @@ const Notification = (props) => {
     return (
         <div 
             className={`notification-item ${props.type}${exit ? " exit" : ""}`}
-            onMouseEnter={() => {if (!(intervalID)){setID(); console.log("starting" + intervalID);}}}
+            onMouseEnter={() => {if (!(intervalID)){setID();}}}
             onClick={() => {setTimeout(() => {
-                console.log("clearing " + intervalID);
                 clearInterval(intervalID);
                 setIntervalID(null);
                 setWidth(0);
